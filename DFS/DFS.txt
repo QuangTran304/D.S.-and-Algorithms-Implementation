@@ -1,0 +1,28 @@
+ -------------------------------------------------------
+|   Author: Quang Tran
+|   Date: April 19, 2019
+|   Title: Pseudocode for Depth First Search Algorithm
+ -------------------------------------------------------
+
+Using Stack
+|___|
+|___|
+|___|
+|   |
+|...|
+|___|
+|___|
+|___|
+
+
+while all vertices are unvisited {
+    push() any vertex;
+
+    while stack is not empty {
+        e = pop();
+        if e is unvisited {
+            visit e, mark e as "visited";
+            push() all adj unvisited vertices of e;
+        }
+    }
+}

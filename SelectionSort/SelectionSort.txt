@@ -1,0 +1,24 @@
+ --------------------------------------------------
+|   Author: Quang Tran
+|   Date: April 22, 2019
+|   Title: Selection Sort
+ --------------------------------------------------
+
+Visualize:
+ -----------------------
+| 3 | 2 | 6 | 9 | 4 | 1 |
+ -----------------------
+  0   1   2   3   4   5
+
+
+SelectionSort(array) {
+    for each element in 'array' {
+        min = currentElement;
+
+        for each element from (currentElement + 1) to the end {
+            if (thatElement < min) {
+                swap(min, thatElement);
+            }
+        }
+    }
+}

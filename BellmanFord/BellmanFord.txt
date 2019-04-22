@@ -1,0 +1,32 @@
+ --------------------------------------------------
+|   Author: Quang Tran
+|   Date: April 19, 2019
+|   Title: BellmanFord's algorithm
+ --------------------------------------------------
+
+d(V) == distance/weight of current vertex
+w(u,v) == weight of edge connecting two vertices
+
+
+
+BellmanFord(graph) {
+    Set distance for source vertex = 0;
+    Set distance for all others = infinity;
+
+    for vertex 1 to V-1 {
+        for each edge(u,v) {
+            if (d(V) > d(u) + w(u,v)) {
+                d(V) = d(u) + w(u,v);
+                update parent/ prev. vertex of V;
+            }
+        }
+    }
+
+    for each edge(u,v) {
+        if (d(V) != d(u) + w(u,v)) {
+            report there's negative-weight cycle;
+        }
+    }
+
+    print all vertices w/ distance and parent;
+}

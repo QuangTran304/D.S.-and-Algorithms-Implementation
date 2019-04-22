@@ -1,0 +1,22 @@
+ --------------------------------------------------
+|   Author: Quang Tran
+|   Date: April 20, 2019
+|   Title: Kruskal's algorithm
+ --------------------------------------------------
+
+Apply to find a MST (Minimum Spanning Tree)
+General idea: never take an edge that connect 2 vertices from the same set
+=> it creates cycle.
+
+
+MST(graph) {
+    for each vertex: makeSet(v);
+    sort edges to increasing-order;     // use Sort() or Priority Queue
+
+    for each edge(u,v) {
+        if (findSet(u) != findSet(v)) {
+            unionSet(u,v);
+            cost += edge(u,v);
+        }
+    }
+}

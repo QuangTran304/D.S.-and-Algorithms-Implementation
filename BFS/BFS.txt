@@ -1,0 +1,23 @@
+ -------------------------------------------------------
+|   Author: Quang Tran
+|   Date: April 19, 2019
+|   Title: Pseudocode for Breadth First Seach algorithm
+ -------------------------------------------------------
+
+Using queue
+-----------------------------
+  | | | | | | | | ... | | |
+-----------------------------
+
+
+while all vertices are unvisited {
+    enqueue() any vertex;
+
+    while queue is not empty {
+        e = dequeue();
+        if e is unvisited {
+            visit e, mark e as "visited";
+            enqueue() adj unvisited vertices of e;
+        }
+    }
+}

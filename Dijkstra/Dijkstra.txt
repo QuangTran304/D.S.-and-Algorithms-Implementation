@@ -1,0 +1,28 @@
+ --------------------------------------------------
+|   Author: Quang Tran
+|   Date: April 19, 2019
+|   Title: Pseudocode for Dijkstra's algorithm
+ --------------------------------------------------
+
+Graph:
+A --- B  
+|   / | \
+|  /  |  C 
+| /   | / 
+D --- E 
+
+
+Dijkstra(graph) {
+    Set distance of current/source vertex = 0;
+    Set distance of all other vertices to infinity;
+
+    while meanHeap is not empty {            // While vertices remain unvisited, visit unvisited vertex w/ smalest known distance from current vertex
+        currentVertex = minHeap.remove();    // Vertex is considered "visted"
+        for each neighbor of currentVertex { // Already excluded unvisited vertices
+            if (currentVertex's distance + current edge < neighbor's distance) {
+                update neighbor's distance;
+                update parent;               // Prev. vertex leads to current vertex
+            }
+        }
+    }
+}
