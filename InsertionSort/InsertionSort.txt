@@ -12,5 +12,14 @@ Visualize:
 
 
 InsertionSort(array) {
-    
+    for each element in array {     // from index 1 to n-1
+        value = currentElement;
+        hole = index of currentElement;
+        
+        while (hole > 0 && value < element[hole - 1]) {
+            element[hole] = element[hole - 1];
+            hole = hole - 1;
+        }
+        element[hole] = value;
+    }
 }
