@@ -17,20 +17,18 @@ Visualize:
 
 
 QuickSort(array, start, end) {
-    if (start < end) {            // Base case - stop when start index >= end index
+    if (start < end) {              // Base case - stop when start index >= end index
         pIndex = partition(array, start, end);
         QuickSort(array, start, pIndex-1);
         QuickSort(array, pIndex+1, end);
     }
 }
 
-
-// The mission of "ptr" is to make sure that the element is smaller than the pivot. If the
-// element is greater than the pivot, it will stop. Do appropiate swappings. 
+ 
 partition(array, start, end) {
     pivot = array[end];
-    ptr = start;
-
+    ptr = start;                    // The mission of "ptr" is to make sure that the element is smaller than the pivot. If the
+                                    // element is greater than the pivot, it will stop. Do appropiate swappings.
     for each element in array {
         if (element <= pivot) {
             swap(element[i], element[ptr]);
