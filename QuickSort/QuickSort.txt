@@ -1,0 +1,42 @@
+ --------------------------------------------------
+|   Author: Quang Tran
+|   Date: April 23, 2019
+|   Title: Quick Sort
+ --------------------------------------------------
+
+Visualize:
+ ---------------------------
+| 3 | 2 | 6 | 5 | 7 | 9 | 4 |
+ ---------------------------
+
+
+**Note: This algorithm choose the "pivot" point at the far right of the array.
+        Once partition() is done, all the elements on the left of "pIndex" will
+        be smaller than element[pIndex], all elements on the right will be greater.
+
+
+
+QuickSort(array, start, end) {
+    if (start < end) {            // Base case - stop when start index >= end index
+        pIndex = partition(array, start, end);
+        QuickSort(array, start, pIndex-1);
+        QuickSort(array, pIndex+1, end);
+    }
+}
+
+
+// The mission of "ptr" is to make sure that the element is smaller than the pivot. If the
+// element is greater than the pivot, it will stop. Do appropiate swappings. 
+partition(array, start, end) {
+    pivot = array[end];
+    ptr = start;
+
+    for each element in array {
+        if (element <= pivot) {
+            swap(element[i], element[ptr]);
+            ptr += 1;
+        }
+    }
+    swap(array[ptr], array[end]);
+    return ptr;
+}
