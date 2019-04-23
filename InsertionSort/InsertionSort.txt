@@ -6,19 +6,34 @@
 
 Visualize:
  -----------------------
-| 3 | 2 | 6 | 9 | 4 | 1 |
+| 3 |   | 6 | 9 | 4 | 1 |
  -----------------------
-  0   1   2   3   4   5
+      2    
+
+ -----------------------
+|   | 3 | 6 | 9 | 4 | 1 |
+ -----------------------
+  2    
+
+ -----------------------
+| 2 | 3 | 6 | 9 | 4 | 1 |
+ -----------------------
+  
+* hole: The imaginary empty box when we take the number out
+  and compare it with the previous values. If the previous value
+  is greater, the "hole" will shift 1 unit to the left. Then 
+  continue... until index of hole = 0 (the far left)
+
 
 
 InsertionSort(array) {
-    for each element in array {     // from index 1 to n-1
+    for each element in array {         // From index 1 to n-1
         value = currentElement;
         hole = index of currentElement;
         
-        while (hole > 0 && value < element[hole - 1]) {
-            element[hole] = element[hole - 1];
-            hole = hole - 1;
+        while (hole > 0 && element[hole - 1] > value) {
+            element[hole] = element[hole - 1];      // Hole will be shifted to the left
+            hole = hole - 1;                        // Update index of new hole when doing left shift
         }
         element[hole] = value;
     }
