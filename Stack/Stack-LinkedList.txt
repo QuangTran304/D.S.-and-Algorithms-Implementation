@@ -13,3 +13,41 @@ Visualize:
 |___|
 |___|
 |___|
+
+
+class Stack {
+    class Node {
+        value;
+        next;
+    }
+
+    push(value) {
+        node = new node;
+        node.value = value;
+
+        node.next = head;
+        head = node;
+    }
+
+    pop() {
+        if (head.next == null) {
+            display error message;
+        } else {
+            temp = head.next;           // Store the value temporarily to return later
+            head = head.next;           // Break the connection, make 'head' points to next element
+            return temp.value;
+        }
+    }
+
+    peek() {
+        return head.next.value;
+    }
+
+    isEmpty() {
+        if (head.next == null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
