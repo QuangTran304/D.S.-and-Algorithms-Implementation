@@ -1,0 +1,51 @@
+ --------------------------------------------------
+|   Author: Quang Tran
+|   Date: April 23, 2019
+|   Title: Stack implementation using Array
+ --------------------------------------------------
+
+Visualize:
+|___|
+|___|
+|___|
+|   |
+|...|
+|___|
+|___|
+|___|
+
+
+
+class Stack {
+    stackArray[];
+    size;
+    topOfStack;
+
+
+    // Initially filled array with value -1 to represent empty space
+
+    push(value) {
+        if array is not full {
+            insert value on top of stack;       // The end of Array
+            topOfStack++;
+        } else {
+            display error message;
+        }
+    }
+
+    pop() {
+        if (topOfStack >= 0) {                  // Check if Stack is empty or not
+            return stackArray[topOfStack--];
+        } else {
+            display error message;
+        }
+    }
+
+    peek() {
+        return stackArray[topOfStack];
+    }
+
+    isEmpty() {
+        return (topOfStack == -1);             
+    }
+}
