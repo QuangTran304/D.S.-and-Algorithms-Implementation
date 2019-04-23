@@ -1,0 +1,62 @@
+ --------------------------------------------------
+|   Author: Quang Tran
+|   Date: April 23, 2019
+|   Title: Merge Sort
+ --------------------------------------------------
+
+Visualize:
+         -----------------------
+        |   |   |   |   |   |   |
+         -----------------------
+            /               \
+    -----------          -----------                   
+   | 3 | 2 | 6 |        | 9 | 4 | 1 |
+    -----------          -----------
+      /     \              /     \
+    ...     ...          ...     ...
+
+
+MergeSort(array) {
+    if (array.length < 2)   return;         // Base case
+    leftArray;                              // From 0 to mid-1 of original array (mid=length/2) 
+    rightArray;                             // From mid to n-1 of original array
+
+    MergeSort(leftArray);
+    MergeSort(rightArray);
+    merge(leftArray, rightArray, array);
+}
+
+
+merge(left, right, array) {
+    leftLength = length(left);
+    rightLength = length(right);
+
+    l = 0;      // Left index
+    r = 0;      // Right index
+    o = 0;      // Original index
+
+    while (l < leftLength  &&  r < rightLength) {
+        if (left[l] <= right[r]) {
+            array[o] = left[l];
+            o++;          
+            l++;          
+        } else {
+            array[o] = right[r];
+            o++;
+            r++;
+        }
+    }
+
+    // To make sure there's no leftover elements (in case 1 array will be exhausted first)
+    // Only one of the following while() will be execute
+    while (l < leftLength) {
+        array[o] = left[l];
+        o++;
+        l++;
+    }
+    while (r < rightLength) {
+        array[o] = right[r];
+        o++;
+        r++;
+    }
+}
