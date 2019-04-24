@@ -1,0 +1,29 @@
+ --------------------------------------------------
+|   Author: Quang Tran
+|   Date: April 24, 2019
+|   Title: Hash table implementation
+ --------------------------------------------------
+
+Visual:
+0  |Joe || 20 |
+1  |Ali || 19 |
+2  |Bob || 26 | <- |Bob || 23 |
+3  |Ari || 25 |
+4  |Mary|| 22 | <- |Mary|| 17 | <- |Mary|| 24 |
+5  |Jane|| 19 |
+
+*Note: Use an array of Linkedlist for this implementation.
+       Use Linkedlist for chaining (collision handling).
+
+
+class HashTable {
+    Linkedlist data[];
+
+    put(key, value) {
+        hashcode = getHashCode(key);
+        index = convert 'hashcode' to index;
+        
+        Linkedlist list = data[index];
+        list.insert(key, value);
+    }
+}
