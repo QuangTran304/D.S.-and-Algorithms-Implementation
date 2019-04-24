@@ -1,0 +1,25 @@
+ --------------------------------------------------
+|   Author: Quang Tran
+|   Date: April 23, 2019
+|   Title: Post-order traversal in a tree
+ --------------------------------------------------
+
+Visual:
+            20
+           /  \
+          3    7
+         / \  / \
+        11 8  2  5
+
+**Using Stack for this type of traversal
+
+
+PostOrder(node) {
+    if (node == null) {
+        return;
+    } else {
+        PostOrder(node.left);
+        PostOrder(node.right);
+        visit node;
+    }
+}
