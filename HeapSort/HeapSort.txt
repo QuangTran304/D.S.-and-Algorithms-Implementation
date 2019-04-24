@@ -1,0 +1,20 @@
+ --------------------------------------------------
+|   Author: Quang Tran
+|   Date: April 24, 2019
+|   Title: Heap Sort algorithm
+ --------------------------------------------------
+
+ Visual:
+            8
+          /   \
+         5     12
+        / \    / \
+       3   7  9  24
+
+**Note: This simple sorting algorithm can be done using 
+        either a min-heap/ a max-heap.
+
+
+HeapSort(array) {
+
+}

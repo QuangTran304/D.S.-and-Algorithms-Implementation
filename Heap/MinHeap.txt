@@ -1,0 +1,83 @@
+ --------------------------------------------------
+|   Author: Quang Tran
+|   Date: April 24, 2019
+|   Title: Min Heap implementation
+ --------------------------------------------------
+
+ Visual:
+            2
+          /   \
+         8     11
+        / \    / \
+      31  27  16  24
+
+
+*Note:  Using Array for this implementation would be ideal since a heap 
+        requires nodes to be filled completely (properly) level-by-level,
+        except for the last level.
+
+**Assumed: these simple functions are implemented already
+        getLeftChildIndex()/ getRightChildIndex()/ getParentIndex()
+        hasLeftChild()/ hasRightChild()/ hasParent()
+        leftChild()/ rightChild()/ parent()
+
+
+
+class MinHeap {
+    capacity = 10;
+    size = 0;
+    items[];
+
+    extendCapacity() {              // Extend the capacity when needed
+        capacity *= 2;
+        copy elements from items[] to newArray;
+        return newArray;
+    }
+
+    top() {
+        return items[0];        
+    }
+
+    remove() {                      // Return and remove smallest value
+        item_rm = items[0];
+        items[0] = items[size-1];
+        size--;
+        heapifyDown();
+        return item_rm;
+    }
+
+    add(item) {
+        if (size == capacity) {
+            extendCapacity(); 
+        }
+        items[size] = item;
+        size++;
+        heapifyUp();
+    }
+
+    heapifyUp() {
+        nodeIndex = size - 1;           // Start with last element
+        while (node[nodeIndex] hasParent  &&  parent of node > itself) {
+            swap(parent, node);
+            nodeIndex = getParentIndex(nodeIndex);
+        }
+    }
+
+    heapifyDown() {
+        nodeIndex = 0;                 // Start with root node
+        while (node[nodeIndex] hasLeftChild) {
+            
+            smallerChild = leftChild;
+            if (node hasRightChild  &&  rightChild < leftChild) {
+                smallerChild = rightChild;
+            }
+
+            if (current node  <  smallerChild) {
+                break;                 // Good, that's what we want
+            } else {
+                swap(node, smallerChild);
+            }
+            nodeIndex = smallerChild index;
+        }
+    }
+}
