@@ -1,0 +1,27 @@
+ --------------------------------------------------
+|   Author: Quang Tran
+|   Date: April 24, 2019
+|   Title: Binary Search
+ --------------------------------------------------
+
+Visualize:
+ ---------------------------
+| 3 | 2 | 6 | 5 | 7 | 9 | 4 |
+ ---------------------------
+ 
+
+binarySearch(array, value, left, right) {
+    if (left > right) {
+        return false;
+    }
+
+    mid = (left + right) / 2;
+
+    if (array[mid] == value) {
+        return true;
+    } else if (value < array[mid]) {
+        return binarySearch(array, value, left, mid-1);
+    } else {
+        return binarySearch(array, value, mid+1, right);
+    }
+}
