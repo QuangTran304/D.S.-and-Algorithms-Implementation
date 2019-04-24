@@ -1,0 +1,25 @@
+ --------------------------------------------------
+|   Author: Quang Tran
+|   Date: April 24, 2019
+|   Title: Search operation in a Binary Search Tree
+ --------------------------------------------------
+
+ Visual:
+            12
+           /  \
+          8    22
+         / \   / \
+        3  9  15 36
+
+
+SearchBST(root, value) {
+    if (root == null) {
+        return false;
+    } else if (root == value) {
+        return true;
+    } else if (value < root) {
+        SearchBST(root.left, value);
+    } else {
+        SearchBST(root.right, value);
+    }
+}
