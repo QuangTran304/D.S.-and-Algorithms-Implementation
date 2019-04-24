@@ -1,0 +1,30 @@
+ --------------------------------------------------
+|   Author: Quang Tran
+|   Date: April 24, 2019
+|   Title: Check if a tree is a Binary Search Tree
+ --------------------------------------------------
+
+ Visual:
+            12
+           /  \
+          8    22
+         / \   / \
+        3  9  15 36
+
+
+class Node {
+    data;
+    Node left;
+    Node right;
+}
+
+checkBST(node, min, max) {              // Ranges are inclusive
+    if (root == null)    return true;
+    if (root.data < min || root.data > max)    return false;
+    
+    return checkBST(root.left, min, root.data - 1)  &&  checkBST(root.right, root.data + 1, max);
+}
+
+checkBST(root) {
+    return checkBST(root, Integer.MIN, Integer.MAX);
+}
