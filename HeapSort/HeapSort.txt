@@ -11,10 +11,23 @@
         / \    / \
        3   7  9  24
 
-**Note: This simple sorting algorithm can be done using 
-        either a min-heap/ a max-heap.
+
+**Note: This simple sorting algorithm can be done using either 
+        a min-heap/ a max-heap.
+        For in-place heap sort, using Max-Heap. The root of the
+        Max-Heap will always be the current largest number. After 
+        constructing the Max-Heap, the root of the heap will be 
+        "remove" one-by-one from the heap. In fact, using the same 
+        array, we just need to swap the current root of the heap 
+        with the current last node of the heap. Once the root of 
+        the heap is placed at the end of the array, that position 
+        is considered sorted, so we just need to swap the rest n-1 
+        elements.
 
 
 HeapSort(array) {
-
+    constructing a max-heap from array;
+    for each element in array start from last index {
+        array[i] = heap.extract();          
+    }
 }
