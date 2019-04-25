@@ -1,0 +1,28 @@
+ --------------------------------------------------
+|   Author: Quang Tran
+|   Date: April 24, 2019
+|   Title: Find height of a binary tree
+ --------------------------------------------------
+
+ Visual:
+            8
+          /   \
+         5     12
+        / \    / \
+       3   7  9  24
+
+
+Height(root) {
+    if (root == null) {
+       return -1;           
+    }
+
+    leftHeight = Height(root.left);
+    rightHeight = Height(root.right);
+
+    if (leftHeight > rightHeight) {
+        return (leftHeight + 1);
+    } else {
+        return (rightHeight + 1);
+    }
+}
