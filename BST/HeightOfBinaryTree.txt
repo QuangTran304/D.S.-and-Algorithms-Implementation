@@ -11,6 +11,11 @@
         / \    / \
        3   7  9  24
 
+**Note: Using recursion to find height of each subtree, then
+        compare and take the larger value. Finally, return 
+        (height + 1) b/c we need to count connection from root
+        node to the left/right subtree.
+
 
 Height(root) {
     if (root == null) {
